@@ -11,6 +11,7 @@
 - [Link to Repository](#link-to-repository)
 - [Link to Demo Vedio](#link-to-demo-vedio)
 - [Screenshots](#screenshots)
+- [Questions](#questions)
 
 ## Description
 
@@ -54,3 +55,7 @@ Click [here](https://sumaiasorna.github.io/portfolio-html-css/) to view deployed
 <a href="#">Walkthrough Video</a>
 
 ## Screenshots /GIF
+
+## Questions
+
+If you have any questions about this application, please feel free to contact me in my <a href="mailto:sorna.sumaia@gmail.com">email.</a>
