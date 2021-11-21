@@ -1,3 +1,5 @@
+const Intern = require("./Intern");
+
 describe("Intern", () => {
   test("should ", () => {});
 
