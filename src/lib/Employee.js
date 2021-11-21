@@ -1,27 +1,25 @@
 class Employee {
-  constructor({ name, id, email }) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
+  constructor(name, id, email) {
+    this.employeeName = name;
+    this.employeeId = id;
+    this.employeeEmail = email;
   }
 
   getName() {
-    return this.name;
+    return this.employeeName;
   }
 
   getId() {
-    return this.id;
+    return this.employeeId;
   }
 
   getEmail() {
-    return this.email;
+    return this.employeeEmail;
   }
 
   getRole() {
     return "Employee";
   }
 }
-const sumaia = new Employee("sumaia", "111", "sorna.sumaia@gmail.com");
-console.log(sumaia.getName());
 
 module.exports = Employee;
