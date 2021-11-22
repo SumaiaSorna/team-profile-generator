@@ -13,7 +13,7 @@ const writeToFile = (filePath, data) => {
   }
 };
 
-// const init = async () => {
+// const start = async () => {
 //   // prompt the questions using inquirer
 //   // generate readme based on answers
 //   const readme = generateReadme();
@@ -22,4 +22,4 @@ const writeToFile = (filePath, data) => {
 //   writeToFile("GENERATED_README.md", readme);
 // };
 
-// init();
+// start();
