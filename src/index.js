@@ -1,3 +1,4 @@
+// Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -8,6 +9,7 @@ module.exports = writeToFile;
 const writeToFile = (filePath, data) => {
   try {
     fs.writeFileSync(filePath, data);
+    console.log("SUCCESS");
   } catch (error) {
     console.log(error.message);
   }
