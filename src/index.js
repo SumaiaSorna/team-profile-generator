@@ -9,7 +9,7 @@ module.exports = writeToFile;
 const writeToFile = (filePath, data) => {
   try {
     fs.writeFileSync(filePath, data);
-    console.log("SUCCESS");
+    console.log("Successfully created index.html!");
   } catch (error) {
     console.log(error.message);
   }
