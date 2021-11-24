@@ -1,5 +1,5 @@
 // Generate Manager Card
-const generateManagerCard = (name, id, email, officeNumber) => {
+const generateManagerCard = ({ name, id, email, officeNumber }) => {
   return `
   <div class="card my-3 bg-info" style="width: 18rem">
   <div class="card-body">
@@ -18,7 +18,7 @@ const generateManagerCard = (name, id, email, officeNumber) => {
 };
 
 // Generate Engineer Card
-const generateEngineerCard = (name, id, email, github) => {
+const generateEngineerCard = ({ name, id, email, github }) => {
   return `<div class="card my-3 bg-warning" style="width: 18rem">
   <div class="card-body">
     <h5 class="card-title">${name}</h5>
@@ -39,7 +39,7 @@ const generateEngineerCard = (name, id, email, github) => {
 };
 
 // Generate Intern Card
-const generateInternCard = (name, id, email, school) => {
+const generateInternCard = ({ name, id, email, school }) => {
   return `
   <div class="card my-3 bg-success" style="width: 18rem">
           <div class="card-body">

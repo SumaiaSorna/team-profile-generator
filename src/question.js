@@ -1,5 +1,4 @@
 //declare a list of questions which will be prompted to the user
-
 const initialQuestions = [
   {
     type: "input",
@@ -21,22 +20,22 @@ const managerQuestions = [
   {
     type: "input",
     message: "Please Enter manager name:",
-    name: "managerName",
+    name: "name",
   },
   {
     type: "input",
     message: "Please Enter manager ID:",
-    name: "managerID",
+    name: "id",
   },
   {
     type: "input",
     message: "Please Enter manager Email:",
-    name: "managerEmail",
+    name: "email",
   },
   {
     type: "input",
     message: "Please Enter manager officeNumber:",
-    name: "managerOfficeNumber",
+    name: "officeNumber",
   },
   {
     type: "input",
@@ -49,22 +48,22 @@ const engineerQuestions = [
   {
     type: "input",
     message: "Please Enter engineer name:",
-    name: "engineerName",
+    name: "name",
   },
   {
     type: "input",
     message: "Please Enter engineer ID:",
-    name: "engineerID",
+    name: "id",
   },
   {
     type: "input",
     message: "Please Enter engineer Email:",
-    name: "engineerEmail",
+    name: "email",
   },
   {
     type: "input",
     message: "Please Enter engineer github:",
-    name: "engineerGithub",
+    name: "github",
   },
   {
     type: "input",
@@ -77,17 +76,17 @@ const internQuestions = [
   {
     type: "input",
     message: "Please Enter your intern name:",
-    name: "intern Name",
+    name: "name",
   },
   {
     type: "input",
     message: "Please Enter your intern  ID:",
-    name: "internID",
+    name: "id",
   },
   {
     type: "input",
     message: "Please Enter your intern Email:",
-    name: "internEmail",
+    name: "email",
   },
   {
     type: "input",

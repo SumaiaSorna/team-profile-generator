@@ -9,9 +9,17 @@ const {
   internQuestions,
   continueQuestion,
 } = require("./question");
-const generateCard = require("./generateCard");
+const {
+  generateInternCard,
+  generateManagerCard,
+  generateEngineerCard,
+} = require("./generateCard");
 
-const generateHTML = () => {
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
+const generateHTML = ({ intern, manager, engineer, teamName }) => {
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -49,92 +57,15 @@ const generateHTML = () => {
   <body>
     <header>
       <div class="jumbotron text-center">
-        <h1 class="display-4">My Team!!</h1>
+        <h1 class="display-4">${teamName}</h1>
       </div>
     </header>
     <main>
-      <div class="d-flex flex-row flex-wrap justify-content-around">
-        <div class="card my-3 bg-info" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">${this.name}</h5>
-            <p class="card-text"><i class="fas fa-briefcase"></i> Manager</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: 1</li>
-            <li class="list-group-item">
-              Email:
-              <a href="mailto:saniulalam@gmail.com">saniulalam@gmail.com</a>
-            </li>
-            <li class="list-group-item">Office Number: 012 333 444</li>
-          </ul>
-        </div>
-
-        <div class="card my-3 bg-warning" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Saafir Sani</h5>
-            <p class="card-text"><i class="fas fa-tools"></i> Engineer</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: 2</li>
-            <li class="list-group-item">
-              Email:
-              <a href="mailto:saafirsani@gmail.com">saafirsani@gmail.com</a>
-            </li>
-            <li class="list-group-item">
-              GitHub Link:
-              <a href="https://github.com/Saafir" target="_blank">Saafir</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card my-3 bg-warning" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Safeerah Sarwana</h5>
-            <p class="card-text"><i class="fas fa-tools"></i> Engineer</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: 3</li>
-            <li class="list-group-item">
-              Email: <a href="mailto:safeerah@gmail.com">safeerah@gmail.com</a>
-            </li>
-
-            <li class="list-group-item">
-              GitHub Link:
-              <a href="https://github.com/Safeerah" target="_blank">Safeerah</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card my-3 bg-success" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Mahmuda Akhter</h5>
-            <p class="card-text"><i class="fas fa-user-graduate"></i> Intern</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: 4</li>
-            <li class="list-group-item">
-              Email: <a href="mailto:mahmuda@gmail.com">mahmuda@gmail.com</a>
-            </li>
-
-            <li class="list-group-item">School: University of Birmingham</li>
-          </ul>
-        </div>
-
-        <div class="card my-3 bg-success" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title">Sazia Ahmed</h5>
-            <p class="card-text"><i class="fas fa-user-graduate"></i> Intern</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: 5</li>
-            <li class="list-group-item">
-              Email: <a href="mailto:sazia@gmail.com">sazia@gmail.com</a>
-            </li>
-
-            <li class="list-group-item">School: University of Birmingham</li>
-          </ul>
-        </div>
-      </div>
+    <div class="d-flex flex-row flex-wrap justify-content-around">
+    ${intern.length ? intern.map(generateInternCard) : ""}
+    ${manager.length ? manager.map(generateManagerCard) : ""}
+    ${engineer.length ? engineer.map(generateEngineerCard) : ""}
+    </div>
     </main>
     <!-- js bundle -->
     <script
@@ -155,57 +86,92 @@ const writeToFile = (filePath, data) => {
     console.log(error.message);
   }
 };
-module.exports = writeToFile;
+const categoriseTeams = (teams) =>
+  teams.reduce(
+    (acc, each) => {
+      if (each.role === "Manager") acc.manager = [...acc.manager, each];
+
+      if (each.role === "Engineer") acc.engineer = [...acc.engineer, each];
+
+      if (each.role === "Intern") acc.intern = [...acc.intern, each];
+
+      return acc;
+    },
+    { manager: [], engineer: [], intern: [] }
+  );
 
 const start = async () => {
   let inProgress = true;
-  // const notes = [];
+  const { teamName } = await inquirer.prompt(initialQuestions);
+
+  const teamMembers = [];
 
   while (inProgress) {
-    //   const { noteType } = await inquirer.prompt(noteTypeQuestion);
+    let { employeeType } = await inquirer.prompt(employeeQuestions);
+    console.log(employeeType);
 
-    //   if (noteType === "BILL") {
-    //     const { text, amount, date } = await inquirer.prompt(billQuestions);
-    //     const bill = new Bill({ text, amount, date });
-    //     notes.push(bill);
-    //   }
+    if (employeeType === "Manager") {
+      const { name, id, email, officeNumber } = await inquirer.prompt(
+        managerQuestions
+      );
+      const manager = new Manager({
+        name,
+        id,
+        email,
+        officeNumber,
+        role: employeeType,
+      });
+      teamMembers.push(manager);
+    }
 
-    //   if (noteType === "TODO") {
-    //     const { text, date, status } = await inquirer.prompt(todoQuestions);
-    //     const todo = new Todo({ text, date, status });
-    //     notes.push(todo);
-    //   }
+    if (employeeType === "Engineer") {
+      const { name, id, email, github } = await inquirer.prompt(
+        engineerQuestions
+      );
+      const engineer = new Engineer({
+        name,
+        id,
+        email,
+        github,
+        role: employeeType,
+      });
+      teamMembers.push(engineer);
+    }
 
-    //   if (noteType === "APPOINTMENT") {
-    //     const { text, date, eventType, otherEvent } = await inquirer.prompt(
-    //       appointmentQuestions
-    //     );
-    //     const appointment = new Appointment({
-    //       text,
-    //       date,
-    //       eventType,
-    //       otherEvent,
-    //     });
-    //     notes.push(appointment);
-    //   }
+    if (employeeType === "Intern") {
+      const { name, id, email, school } = await inquirer.prompt(
+        internQuestions
+      );
+      const intern = new Intern({
+        name,
+        id,
+        email,
+        school,
+        role: employeeType,
+      });
+      teamMembers.push(intern);
+    }
 
-    //   const { anotherNote } = await inquirer.prompt(continueQuestion);
+    console.log(teamMembers);
 
-    //   if (!anotherNote) {
-    //     inProgress = false;
-    //   }
-    // }
+    const { newMember } = await inquirer.prompt(continueQuestion);
 
-    // const categorisedNotes = categoriseNotes(notes);
-
-    const html = generateHtml(categorisedNotes);
-
-    writeToFile("./dist/index.html", html);
-
-    console.log("Successfully generated HTML!!");
-
-    process.exit(0);
+    if (!newMember) {
+      inProgress = false;
+    }
   }
+
+  const teams = categoriseTeams(teamMembers);
+  console.log(teams);
+  teams.teamName = teamName;
+  const html = generateHTML(teams);
+  console.log(html);
+
+  // writeToFile("./dist/index.html", html);
+
+  console.log("HTML Webpage Creation = Successful");
+
+  process.exit(0);
 };
 
 start();
