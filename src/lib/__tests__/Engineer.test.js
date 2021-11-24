@@ -1,15 +1,15 @@
-const Intern = require("./Intern");
-const sumaia = new Intern(
+const Engineer = require("../Engineer");
+const sumaia = new Engineer(
   "sumaia",
   "111",
   "sorna.sumaia@gmail.com",
-  "university of birmingham",
-  "Intern"
+  "SumaiaSorna",
+  "Engineer"
 );
 
-describe("Intern", () => {
-  test("should be an instance of Intern ", () => {
-    expect(sumaia).toBeInstanceOf(Intern);
+describe("Engineer", () => {
+  test("should be an instance of Engineer ", () => {
+    expect(sumaia).toBeInstanceOf(Engineer);
   });
 
   test("should return the expected name", () => {
@@ -24,11 +24,11 @@ describe("Intern", () => {
     expect(sumaia.getEmail).toBe("sorna.sumaia@gmail.com");
   });
 
-  test("should return the expected school", () => {
-    expect(sumaia.getSchool()).toBe("university of birmingham");
+  test("should return the expected github ", () => {
+    expect(sumaia.getGitHub()).toBe("SumaiaSorna");
   });
 
   test("should return the expected role", () => {
-    expect(sumaia.getRole).toBe("Intern");
+    expect(sumaia.getRole).toBe("Engineer");
   });
 });

@@ -1,4 +1,4 @@
-const Employee = require("./Employee");
+const Employee = require("../Employee");
 const sumaia = new Employee({
   name: "sumaia",
   id: "111",

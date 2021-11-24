@@ -15,13 +15,12 @@ const writeToFile = (filePath, data) => {
   }
 };
 
-// const start = async () => {
-//   // prompt the questions using inquirer
-//   // generate readme based on answers
-//   const readme = generateReadme();
+const start = async () => {
+  // prompt the questions using inquirer
+  // generate readme based on answers
+  // const readme = generateReadme();
+  // // write generated readme to a file
+  // writeToFile("GENERATED_README.md", readme);
+};
 
-//   // write generated readme to a file
-//   writeToFile("GENERATED_README.md", readme);
-// };
-
-// start();
+start();
