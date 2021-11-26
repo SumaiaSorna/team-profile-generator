@@ -14,7 +14,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-const { generateHTML } = require("./lib/utils");
+const generateHTML = require("./lib/utils");
 
 const categoriseTeams = (teams) =>
   teams.reduce(
@@ -91,6 +91,14 @@ const start = async () => {
     }
   }
 
+  const writeToFile = (filePath, data) => {
+    try {
+      fs.writeFileSync(filePath, data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const teams = categoriseTeams(teamMembers);
   console.log(teams);
   teams.teamName = teamName;
@@ -98,6 +106,7 @@ const start = async () => {
   console.log(html);
 
   writeToFile("./dist/index.html", html);
+  console.log("Successfully generated HTML!!");
 
   process.exit(0);
 };
