@@ -1,11 +1,11 @@
 const Manager = require("../Manager");
-const sumaia = new Manager(
-  "sumaia",
-  "111",
-  "sorna.sumaia@gmail.com",
-  "012 333 444",
-  "Manager"
-);
+const sumaia = new Manager({
+  name: "sumaia",
+  id: "111",
+  email: "sorna.sumaia@gmail.com",
+  officeNumber: "012 333 444",
+  role: "Manager",
+});
 
 describe("Manager", () => {
   test("should be an instance of Manager ", () => {

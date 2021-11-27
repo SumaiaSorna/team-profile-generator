@@ -1,11 +1,11 @@
 const Intern = require("../Intern");
-const sumaia = new Intern(
-  "sumaia",
-  "111",
-  "sorna.sumaia@gmail.com",
-  "university of birmingham",
-  "Intern"
-);
+const sumaia = new Intern({
+  name: "sumaia",
+  id: "111",
+  email: "sorna.sumaia@gmail.com",
+  school: "university of birmingham",
+  role: "Intern",
+});
 
 describe("Intern", () => {
   test("should be an instance of Intern ", () => {

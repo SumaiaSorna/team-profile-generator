@@ -1,11 +1,11 @@
 const Engineer = require("../Engineer");
-const sumaia = new Engineer(
-  "sumaia",
-  "111",
-  "sorna.sumaia@gmail.com",
-  "SumaiaSorna",
-  "Engineer"
-);
+const sumaia = new Engineer({
+  name: "sumaia",
+  id: "111",
+  email: "sorna.sumaia@gmail.com",
+  github: "SumaiaSorna",
+  role: "Engineer",
+});
 
 describe("Engineer", () => {
   test("should be an instance of Engineer ", () => {
