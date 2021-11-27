@@ -38,7 +38,6 @@ const start = async () => {
 
   while (inProgress) {
     let { employeeType } = await inquirer.prompt(employeeQuestions);
-    console.log(employeeType);
 
     if (employeeType === "Manager") {
       const { name, id, email, officeNumber } = await inquirer.prompt(

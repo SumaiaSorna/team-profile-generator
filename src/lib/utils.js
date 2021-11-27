@@ -47,9 +47,9 @@ const generateHTML = ({ intern, manager, engineer, teamName }) => {
       </header>
       <main>
       <div class="d-flex flex-row flex-wrap justify-content-around">
-      ${manager.length ? manager.map(generateManagerCard) : ""}
-      ${engineer.length ? engineer.map(generateEngineerCard) : ""}
-      ${intern.length ? intern.map(generateInternCard) : ""}
+      ${manager.length ? manager.map(generateManagerCard).join("") : ""}
+      ${engineer.length ? engineer.map(generateEngineerCard).join("") : ""}
+      ${intern.length ? intern.map(generateInternCard).join("") : ""}
       </div>
       </main>
       <!-- js bundle -->
