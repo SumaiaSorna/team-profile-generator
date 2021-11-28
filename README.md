@@ -54,7 +54,9 @@ Click [here](https://sumaiasorna.github.io/portfolio-html-css/) to view deployed
 
 <a href="#">Walkthrough Video</a>
 
-## Screenshots /GIF
+## Screenshots
+
+![screenshot of generated html](./assets/images/my-team.png)
 
 ## Questions
 

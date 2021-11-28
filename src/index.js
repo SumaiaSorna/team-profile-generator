@@ -81,8 +81,6 @@ const start = async () => {
       teamMembers.push(intern);
     }
 
-    console.log(teamMembers);
-
     const { newMember } = await inquirer.prompt(continueQuestion);
 
     if (!newMember) {
@@ -99,10 +97,9 @@ const start = async () => {
   };
 
   const teams = categoriseTeams(teamMembers);
-  console.log(teams);
+
   teams.teamName = teamName;
   const html = generateHTML(teams);
-  console.log(html);
 
   writeToFile("./dist/index.html", html);
   console.log("Successfully generated HTML!!");
