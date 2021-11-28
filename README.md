@@ -48,7 +48,7 @@ npm run test:watch
 
 ## Link to repository
 
-Click [here](https://sumaiasorna.github.io/portfolio-html-css/) to view deployed application on Github page.
+Click [here](https://sumaiasorna.github.io/team-profile-generator/) to view deployed application on Github page.
 
 ## Link to Demo Vedio
 
