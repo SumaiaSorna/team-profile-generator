@@ -1,5 +1,7 @@
 # Team Profile Generator ![MIT](https://img.shields.io/static/v1?label=MIT&message=License&color=critical)
 
+![team-profile-generator](./assets/gif/team-profile-generator.gif)
+
 ## Table Of Contents
 
 - [Description](#description)
@@ -9,7 +11,7 @@
   - [Tests with Coverage](#tests-with-coverage)
   - [Tests with Watch](#tests-with-watch)
 - [Link to Repository](#link-to-repository)
-- [Link to Demo Vedio](#link-to-demo-vedio)
+- [Link to Walkthrougho Vedio](#link-to-walkthrough-vedio)
 - [Screenshots](#screenshots)
 - [Questions](#questions)
 
@@ -50,9 +52,9 @@ npm run test:watch
 
 Click [here](https://sumaiasorna.github.io/team-profile-generator/) to view deployed application on Github page.
 
-## Link to Demo Vedio
+## Link to Walkthrough Vedio
 
-<a href="#">Walkthrough Video</a>
+<a href="https://drive.google.com/drive/u/0/folders/11z1o3F3RY0Rkd0yrz57NiyK1dHH-dSO8">Walkthrough Video</a>
 
 ## Screenshots
 
