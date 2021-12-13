@@ -2,6 +2,14 @@
 
 ![team-profile-generator](./assets/gif/team-profile-generator.gif)
 
+## Link to repository
+
+Click [here](https://sumaiasorna.github.io/team-profile-generator/) to view deployed application on Github page.
+
+## Link to Walkthrough Vedio
+
+<a href="https://drive.google.com/drive/u/0/folders/11z1o3F3RY0Rkd0yrz57NiyK1dHH-dSO8">Walkthrough Video</a>
+
 ## Table Of Contents
 
 - [Description](#description)
@@ -47,14 +55,6 @@ npm run test
 ```
 npm run test:watch
 ```
-
-## Link to repository
-
-Click [here](https://sumaiasorna.github.io/team-profile-generator/) to view deployed application on Github page.
-
-## Link to Walkthrough Vedio
-
-<a href="https://drive.google.com/drive/u/0/folders/11z1o3F3RY0Rkd0yrz57NiyK1dHH-dSO8">Walkthrough Video</a>
 
 ## Screenshots
 
